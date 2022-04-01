@@ -1,0 +1,17 @@
+{% extends 'base.vue.html.twig' %}
+
+{% block body %}
+    <div id="app"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="module" defer>
+        window.appObj.template = '<h1>${name}$</h1><input v-model="name"></input>';
+        window.appObj.data = () => {
+            return {
+                name: 'Jose'
+            }
+        }
+    </script>
+{% endblock %}

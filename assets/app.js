@@ -10,3 +10,16 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+
+import { createApp } from 'vue';
+
+const appObj = {
+    template: '<h1>Test</h1>'
+};
+
+const app = createApp(appObj);
+
+app.config.compilerOptions.delimiters = ['${', '}$'];
+
+window.appObj = appObj;
+window.app = app;

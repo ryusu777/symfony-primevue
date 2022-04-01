@@ -13,6 +13,9 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
+    .addAliases({
+        vue: 'vue/dist/vue.esm-bundler.js'
+    })
 
     /*
      * ENTRY CONFIG
