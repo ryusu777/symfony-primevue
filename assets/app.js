@@ -13,9 +13,7 @@ import './bootstrap';
 
 import { createApp } from 'vue';
 
-const appObj = {
-    template: '<h1>Test</h1>'
-};
+const appObj = {};
 
 const app = createApp(appObj);
 
