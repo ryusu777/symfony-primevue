@@ -12,12 +12,26 @@ import './styles/app.css';
 import './bootstrap';
 
 import { createApp } from 'vue';
+import PrimeVue from 'primevue/config';
+import 'primevue/resources/themes/saga-blue/theme.css';
+import 'primevue/resources/primevue.min.css';
+import 'primeicons/primeicons.css';
 
 const appObj = {};
 
 const app = createApp(appObj);
 
+app.use(PrimeVue);
+
 app.config.compilerOptions.delimiters = ['${', '}$'];
 
 window.appObj = appObj;
 window.app = app;
+window.registerComponent = (componentName, componentSource) => {
+    app.component(componentName, componentSource);
+}
+window.registerPrimeVueComponent = (componentName, componentSource) => {
+    import(/* webpackMode: "eager" */`primevue/${componentSource}/${componentSource}.cjs.js`).then((obj) => {
+        app.component(componentName, obj);
+    });
+}

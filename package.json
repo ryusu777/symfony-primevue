@@ -16,6 +16,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "primeicons": "^5.0.0",
+        "primevue": "^3.12.4",
         "vue": "^3.2.31"
     }
 }
