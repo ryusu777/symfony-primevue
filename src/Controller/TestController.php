@@ -15,4 +15,9 @@ class TestController extends AbstractController
             'controller_name' => 'TestController',
         ]);
     }
+    #[Route('/form', name: 'app_form')]
+    public function form(): Response
+    {
+        return $this->render('test/about.cdn.html.twig');
+    }
 }
