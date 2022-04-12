@@ -1,8 +1,7 @@
 <?php
 namespace App\Twig;
 
-use Symfony\Component\Asset\UrlPackage;
-use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
+use App\Packages\PrimeVuePackage;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -12,7 +11,7 @@ class PackageExtension extends AbstractExtension
 
     public function __construct() {
         $this->packages = [
-            'prime-vue' => new UrlPackage('https://unpkg.com/primevue/', new StaticVersionStrategy('v1')),
+            'prime-vue' => PrimeVuePackage::getUrlPackage()
         ];
     }
 

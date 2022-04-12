@@ -1,4 +1,4 @@
-{% extends 'base.primevue.cdn.html.twig' %}
+{% extends 'base.cdn.html.twig' %}
 
 {% block body %}
     <div id="app">
@@ -114,7 +114,7 @@
 
         const App = {
             setup() {
-                const checked1 = ref('{{ content }}');
+                const checked1 = ref('');
                 const checked2 = ref(false);
                 const radioValue1 = ref('');
                 const radioValue2 = ref('');
